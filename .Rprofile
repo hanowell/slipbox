@@ -18,7 +18,9 @@ options(
   # build .Rmd to .html (via Pandoc); to build to Markdown, set this option to 'markdown'
   blogdown.method = 'html',
   # Default post author
-  blogdown.author = "Ben Hanowell"
+  blogdown.author = "Ben Hanowell",
+  # Default post file extension
+  blogdown.ext = ".Rmd"
 )
 
 # fix Hugo version
