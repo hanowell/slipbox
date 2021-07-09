@@ -1,0 +1,21 @@
+---
+title: The problem with corporate narratives
+author: Ben Hanowell
+date: '2020-06-24'
+slug: the-problem-with-corporate-narratives
+categories: []
+tags:
+  - narratives
+  - corporation environment
+  - writing
+  - reading
+  - communication
+---
+
+Some corporations, including my employer, prefer written narratives as the primary method to communicate ideas. Specifically, the social norm is to read the narrative silently during the first part of the meeting. One rationale for reading during the meeting is that no one is going to read the paper before the meeting.
+
+I routinely hear a few complaints about this process. First and foremost, executive leadership has _a lot_ of reading to do. If the writing is good, my response to that complaint is: "So what?" But to be fair, some (actually a lot) of the writing is horrible, even when companies invest resources in training people to write well (and especially when those training courses are hard to get into).
+
+That said, there's a possibly larger problem that gets ignored. In my experience both as a writer and reader of narratives, the problem is often not how bad the writing is, but how bad people are at _reading_, especially when you are told to cram the reading into the first half hour of a meeting where you're supposed to be having discussions that lead to decisions. It's like cramming before an exam without having even taken the course yet. Possibly due to the type of people who get selected into corporate leadership and technical roles, the cramming has a hyper-critical bias, often at the expense of understanding the actual content.
+
+For these reasons, I ask that corporations who require written narratives consider shifting toward a model where people are expected to read the narrative before the meeting. If people, _including senior leadership_, don't read the narrative, they should be called out and penalized, just like we call people out for not coming to the meeting or coming in too late to read the damn thing. Good news: the meeting can either be a half hour shorter, or it can include a half hour more of substantive discussion and decision-making.

@@ -1,0 +1,16 @@
+---
+title: Gelman weighs in on pre-arrest selection bias debate
+author: Ben Hanowell
+date: '2020-07-19'
+slug: gelman-weighs-in-on-pre-arrest-selection-bias-debate
+bibliography: [scholar.bib]
+tags:
+  - pre-arrest selection bias
+---
+
+Gelman weighs in on the Gaebler et al. [-@gaeblerDeconstructingClaimsPostTreatment2020] vs. Knox et al. [-@knox2019administrative] critique regarding pre-arrest selection bias that was recently covered in an [article](https://fivethirtyeight.com/features/why-statistics-dont-capture-the-full-extent-of-the-systemic-bias-in-policing/) in FiveThirtyEight by [Laura Bronner](https://fivethirtyeight.com/contributors/laura-bronner/) [-@bronnerWhyStatisticsDon2020]. First, Gelman agrees that Knox et al. are right to admonish against conditioning on an intermediate, post-treatment variable (in this case contact with the police). Yet Gelman also agrees that Gaebler et al. are right that sometimes you are specifically interested in that conditioning, including in studies of polices bias. Then Gelman tries to provie clarity that Knox et al. are stating that causal effects at one stage depend on everything that comes before, but that they are wrong that you can't estimate degree of racist bias among police using standard regression-based inference. I agree with Gelman, but think that Knox et al. would say Gelman is missing the point. They want to estimate the overall presence of racism in the criminal justice system. If it is impossible to see it in a post-arrest study (because of insufficient data on confounders, and because of post-arrest selection bias), then we need to see if it exists before arrest, and then we need to see what the origin of that bias is. Are contact rates among Blacks over and above what we would expect given differential crime rates between Blacks and non-Blacks? Indeed, is the definition of crime itself biased against Blacks?
+
+Related posts:
+
+1. https://slipbox.hanowell.me/post/2020/06/25/more-from-fivethirtyeight-on-pre-arrest-selection-bias/
+1. https://slipbox.hanowell.me/post/2020/06/24/gaebler-et-al-vs-knox-et-al-discriminatory-policing/

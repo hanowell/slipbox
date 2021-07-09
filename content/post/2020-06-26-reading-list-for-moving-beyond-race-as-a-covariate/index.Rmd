@@ -1,0 +1,22 @@
+---
+title: Reading list for moving beyond "race" as a covariate
+author: Ben Hanowell
+date: '2020-06-26'
+slug: reading-list-for-moving-beyond-race-as-a-covariate
+bibliography: [scholar.bib]
+tags:
+  - race as a covariate
+---
+
+A Twitter [thread](https://threadreaderapp.com/thread/1276333515722948609.html) from [Alysasah "Ali" Sewell](https://twitter.com/aasewell) includes a starter kit for researchers to move beyond the inclusion of a categorical variable for "race" (and by extension "ethnicity") in social science research, in particular the design of quantitative models. The inclusion of these variables can lead to all sorts of issues in causal analysis, especially when the "race" variable conflates multiple factors, some of which could be mediators or colliders. We should do better, including (maybe especially?) in industrial data science and machine learning, where we are still trying to figure out how to get beyond our fear of using protected class attributes in our models (mostly because we don't want to get sued), despite the opportunity for using such research to become a more inclusive organization whose research not only delights customers, but combats systemic racism (and other types of bigotry).
+
+Here is the reading list for future reference.
+
+**Beyond "race" variable reading list**
+
+1. **Fatal Invention** by @roberts2011fatal
+1. **Thicker than blood: How racial statistics lie** by @zuberi2001thicker
+1. **White logic, white methods: Racism and methodology** by @zuberi2008white
+1. **Rethinking race and ethnicity in research methods** by @stanfield2016rethinking
+
+Also take note of the researchers Dr. Sewell references in her thread, many of whom are on Twitter.

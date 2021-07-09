@@ -1,4 +1,4 @@
-baseurl: "/"
+baseurl: "https://slipbox.hanowell.me/"
 languageCode: "en-us"
 title: "A minimal Hugo website"
 theme: "hugo-xmin"

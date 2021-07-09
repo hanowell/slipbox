@@ -1,0 +1,10 @@
+---
+title: Test post
+author: Ben Hanowell
+date: '2021-07-09'
+slug: test-post
+categories: []
+tags: []
+---
+
+This post is a test.

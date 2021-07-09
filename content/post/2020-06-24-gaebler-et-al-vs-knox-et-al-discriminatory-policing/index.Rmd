@@ -1,0 +1,22 @@
+---
+title: Are researchers talking past one another about discriminatory policing?
+author: Ben Hanowell
+date: '2020-06-24'
+slug: gaebler-et-al-vs-knox-et-al-discriminatory-policing
+bibliography: [scholar.bib]
+tags:
+  - police misconduct
+  - causality
+---
+
+@gaeblerDeconstructingClaimsPostTreatment2020 recently critiqued work by Knox et al. (cited in Gaebler et al.) on identifying causal estimands in the context of discriminatory policing. Gaebler et al.'s article starts by enumerating the issues with identifying these causal estimands:
+
+1. hard to define the causal estimand for factors that cannot be manipulated, such as protected attributes, which makes it difficult to do experimental studies
+1. important variables often omitted in observational studies due, for example, to lack of full information about incidence reports
+1. post-treatment bias due to sample selection (e.g., discriminatory pre-arrest police behavior)
+
+Knox et al. argue that the third problem above makes it nigh impossible to study police discrimination because there is insufficient data on pre-arrest behavior. The paper's authors argue that Knox et al. commit a logical fallacy by assuming that establishing discriminatory pre-arrest behavior is a necessary condition (discriminatory policing), when Gaebler et al. claim that they prove it is merely a sufficient condition.
+
+I haven't yet read this paper yet. But uh... is it merely a sufficient condition? If police officers' post-arrest behavior is identical across all races of people with whom they interact, but their rate of interacting with those people is discriminatory, then policing is discriminatory. In that case, if you can't measure discrimination in pre-arrest behavior, but only find it in post-arrest behavior, you've failed to correctly measure discrimination in policing, and its implications for the differential risks that people of different races face when it comes to interacting with the cops.
+
+At some point I'll read this entire paper to confirm if Gaebler et al. and Knox et al. are indeed talking past one another.

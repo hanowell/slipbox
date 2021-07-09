@@ -37,3 +37,11 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+
+# Safely ignore for blogdown
+.DS_Store
+Thumbs.db
+
+# Safely ignore if building blogdown site on Netlify
+/public/
+/resources/

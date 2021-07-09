@@ -1,0 +1,51 @@
+---
+title: One cannot think without posting
+author: Ben Hanowell
+date: '2020-06-19'
+slug: initialize-slipbox
+categories: []
+tags:
+  - meta
+  - slipbox
+  - blogdown
+  - bookdown
+  - Zotero
+  - BibTex
+bibliography: [scholar.bib, packages.bib]
+---
+
+
+
+<p>In a Tweet I can’t find anymore, <a href="https://twitter.com/lancegravlee">Lance Gravlee</a> and someone else (I forget who, sorry) were discussing how good Twitter rants often become the outline for an essay. Gravlee mentioned how this process reminded him of a book about taking smart notes, aptly called <strong>Taking Smart Notes</strong> <span class="citation">(Ahrens 2017)</span> (TSN). I looked it up and realized how desperately I needed to read that very book, which describes the slipbox (“zettelkasten” in the original German) method pioneered by, among others, someone named <a href="https://en.wikipedia.org/wiki/Niklas_Luhmann">Niklas Luhman</a>, who I’ve never heard of but is apparently one of the most important social theorists and prolific academic writers of all time.</p>
+<p>The slipbox advocated by TSN is a method of note-taking that facilitates writing by putting the process of writing at center of research long before you write the first draft of a manuscript (or piece of software). It consists of five basic components:</p>
+<ol style="list-style-type: decimal">
+<li><strong><em>Fleeting notes</em></strong> that are thrown away after a day or two once used to create permanent notes.</li>
+<li>An <strong><em>annotated bibliography</em></strong> of references.</li>
+<li>A treasure trove of <strong><em>permanent notes</em></strong> (this is the slipbox) that link to one another in dynamic ways, and that reference items in the bibliography.</li>
+<li><strong><em>Project notes</em></strong>, which are specific to a project and discarded or archived once the project is complete.</li>
+<li>An <strong><em>index</em></strong> of some sort to make it easy to both find and relate notes and references together.</li>
+</ol>
+<p>Permanent notes are written as if for an external audience, with complete sentences and logical arguments. They aren’t meant to be perfect, but they’re the starting point, outline, or inspiration of larger pieces. If they’re good enough, they are the piece itself, and you’re done; pat yourself on the back.</p>
+<p>In adopting the slipbox, I need it to fit into my overall workflow, which often involves applying statistics <em>in silico</em>, usually with R. In addition, I want to be able to make applied statistics, including the execution of code, be a part of my notes whenever possible, in a way that preserves the portability of the plain text as much as possible. Finally, I want my notes to be open, insofar as they can be given that I often work on proprietary stuff at work. Given these requirements, I came up with the following solution.</p>
+<ol style="list-style-type: decimal">
+<li>For fleeting notes, I just use a pen and paper, or a napkin, or whatever the fuck I have lying around because who gives a shit, I’m throwing it out as soon as I make sense of it in a permanent note.</li>
+<li>For the annotated bibliography, I’m using <a href="https://www.zotero.org/">Zotero</a> as recommended in TSN, but I include the <a href="https://retorque.re/zotero-better-bibtex/">Better BibTex</a> (BBT) Zotero plugin (following advice <a href="https://tc.rbind.io/post/2017/07/07/citing-in-rmarkdown-using-zotero/">here</a>) to facilitate exporting to BibTex format and the creation of unique keys for citations (you’ll see why in a second).</li>
+<li>For the slipbox, I’ve created this blog using the <strong><code>blogdown</code></strong> R package <span class="citation">(Xie 2020a)</span>, which allows to me create a static website using a simple markdown syntax <span class="citation">(Allaire et al. 2020)</span> that can execute R code in the back end. Then I’ll export a <code>scholar.bib</code> file with the slipbox’s updated literature references into the <code>content/post</code> subdirectory of my slipbox blog, following the advice <a href="https://blogdown-demo.rbind.io/2017/08/28/adding-citations-to-posts/">here</a>. For some more fleeting references, it’s easier just to add a hyperlink in the slipbox note, although I’ll still add those to my Zotero bibliography. I’ll also include a separate <code>packages.bib</code>, which will include R package references, initialized and updated with help from the <strong><code>knitr</code></strong> <span class="citation">(Xie 2020b)</span> package’s <em><code>write_bib</code></em> function. Eventually, I might need a solution for Python library references.</li>
+<li>For the indexing, I’ll use blog post tags and (for direct references) backlinks, along with similar tags for Zotero references (to aid in reference search).</li>
+</ol>
+<p>Let’s see how this goes.</p>
+<p><strong>Note:</strong> This post’s title is inspired by a quote from Luhman: “One cannot think without writing.” Clearly, this isn’t true, since there are many people who existed before writing, or who have never learned to write, but who can think quite well. That said, writing is a useful tool, and so is posting to a blog if you do it right. Let’s hope I do it right.</p>
+<div id="refs" class="references">
+<div id="ref-ahrensHowTakeSmart2017">
+<p>Ahrens, Sönke. 2017. <em>How to Take Smart Notes: One Simple Technique to Boost Writing, Learning and Thinking</em>. CreateSpace Independent Publishing Platform.</p>
+</div>
+<div id="ref-R-rmarkdown">
+<p>Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and Richard Iannone. 2020. <em>Rmarkdown: Dynamic Documents for R</em>. <a href="https://CRAN.R-project.org/package=rmarkdown">https://CRAN.R-project.org/package=rmarkdown</a>.</p>
+</div>
+<div id="ref-R-blogdown">
+<p>Xie, Yihui. 2020a. <em>Blogdown: Create Blogs and Websites with R Markdown</em>. <a href="https://CRAN.R-project.org/package=blogdown">https://CRAN.R-project.org/package=blogdown</a>.</p>
+</div>
+<div id="ref-R-knitr">
+<p>———. 2020b. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in R</em>. <a href="https://CRAN.R-project.org/package=knitr">https://CRAN.R-project.org/package=knitr</a>.</p>
+</div>
+</div>
