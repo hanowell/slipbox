@@ -30,7 +30,7 @@ menu:
 
 params:
   description: "Where Hanowell takes meaningful notes."
-  footer: "&copy; [Ben Hanowell]https://www.linkedin.com/in/ben-hanowell/) 2020 -- 2021"
+  footer: "&copy; [Ben Hanowell](https://www.linkedin.com/in/ben-hanowell/) 2020 -- 2021"
 
 markup:
   goldmark:
