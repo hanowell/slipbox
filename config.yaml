@@ -1,6 +1,6 @@
 baseurl: "https://slipbox.hanowell.me/"
 languageCode: "en-us"
-title: "A minimal Hugo website"
+title: "Hanowell's slipbox"
 theme: "hugo-xmin"
 googleAnalytics: ""
 disqusShortname: ""
@@ -29,8 +29,8 @@ menu:
       url: "index.xml"
 
 params:
-  description: "A website built through Hugo and blogdown."
-  footer: "&copy; [Yihui Xie](https://yihui.org) 2017 -- 2020 | [Github](https://github.com/yihui) | [Twitter](https://twitter.com/xieyihui)"
+  description: "Where Hanowell takes meaningful notes."
+  footer: "&copy; [Ben Hanowell]https://www.linkedin.com/in/ben-hanowell/) 2020 -- 2021"
 
 markup:
   goldmark:
