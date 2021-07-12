@@ -20,9 +20,7 @@ options(
   # Default post author
   blogdown.author = "Ben Hanowell",
   # Default post file extension
-  blogdown.ext = ".Rmd",
-  # Don't use page bundles
-  blogdown.new_bundle = FALSE
+  blogdown.ext = ".Rmd"
 )
 
 # fix Hugo version

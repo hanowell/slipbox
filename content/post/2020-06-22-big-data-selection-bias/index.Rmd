@@ -1,0 +1,21 @@
+---
+title: Why we should expect "big data" to suffer from selection bias
+author: Ben Hanowell
+date: '2020-06-22'
+slug: big-data-selection-bias
+bibliography: [../scholar.bib]
+categories: []
+tags:
+  - selection bias
+  - big data
+---
+
+A [recent article](https://statmodeling.stat.columbia.edu/2020/06/18/laplaces-demon-a-seminar-series-about-bayesian-machine-learning-at-scale-and-my-answers-to-their-questions/) [@gelmanLaplaceDemonSeminar] on Andrew Gelman's blog covered some answers that Gelman gave to questions posed during a recent seminar. One of the questions was, "Do we need to optimally process information or borrow strength in the big data era?" Gelman's response:
+
+> Big Data need Big Model. Big Data are typically convenience samples, not random samples; observational comparisons, not controlled experiments; available data, not measurements designed for a particular study. As a result, it is necessary to adjust to extrapolate from sample to population, to match treatment to control group, and to generalize from observations to underlying constructs of interest. Big Data + Big Model = expensive computation, especially given that we do not know the best model ahead of time and thus must typically fit many models to understand what can be learned from any given dataset.
+
+Gelman continues:
+
+> My point here is that even when it seems we have “big data,” we still run into data limitations. We might have zillions of observations, but if we’re interested in predictions for next year, what’s relevant is that we only have two past years of data. Etc.
+
+Here's the upshot: _We should expect the data that is collected by a company in the course of doing business to suffer from selection bias._ Why so? Because companies by necessity are trying to target their customer base, using whatever their current notion of that population. At the same time, companies are trying to collect data rapidly and cheaply. This is one of the many reasons why we must almost always use statistical methods to draw data-driven inferences about out business, even if we use the entire census of that business's customers and customer transactions. It also highlights one avenue through which we always make assumptions when analyzing our company's data.

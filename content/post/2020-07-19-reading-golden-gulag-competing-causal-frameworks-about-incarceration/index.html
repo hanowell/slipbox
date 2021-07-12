@@ -1,0 +1,67 @@
+---
+title: 'Reading Golden Gulag: Competing causal frameworks about incarceration'
+author: Ben Hanowell
+date: '2020-07-19'
+slug: reading-golden-gulag-competing-causal-frameworks-about-incarceration
+bibliography: [../packages.bib, ../scholar.bib]
+tags:
+  - Golden Gulag
+  - Introduction to Golden Gulag
+  - competing narratives about incarceration
+  - prison abolition
+  - imagining a better world
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<p>I’m reading Ruth Wilson Gilmore’s <em>Golden Gulag</em> <span class="citation">(<a href="#ref-gilmore2007golden" role="doc-biblioref">2007</a>)</span> as part of my education in ideas about the abolition of prisons and police. <em>Gulag</em> is a book about California’s prison system, but it expands to cover broadly what abolitionists refer to as the <em><strong>carceral state</strong></em>.</p>
+<p>I started my abolitionist education with Davis’s <em>Are Prisons Obsolete?</em> <span class="citation">(<a href="#ref-davis2011prisons" role="doc-biblioref">2011</a>)</span>, but read that book before I started taking serious notes for this slipbox. After <em>Gulag</em>, I’ll read Vitale’s <em>The End of Policing</em> <span class="citation">(<a href="#ref-vitale2017end" role="doc-biblioref">2017</a>)</span>. Because I have an eleven-year-old daughter, a romantic partner, a day job, and many other extra-curricular interests, this education will take a long time, probably a full year, maybe more than that. I think that’s okay, because it will probably take a long time for abolition to happen if it ever does (a delay that might not be okay). Even if abolition never happens, it will take a long time for any other meaningful reform to happen, as well, even if people keep righteously burning down corrupt police stations and standing up to an increasingly authoritarian police state.</p>
+<p>Within my abolition education, this slipbox note starts a thread that describes in the language of causal diagrams the competing narratives about American incarceration. Meanwhile, it wrestles with sociologist Mo Torres’s <span class="citation">(<a href="#ref-torresInvitationAbolitionCurious2020" role="doc-biblioref">2020</a>)</span> suggestion that those of us new to the abolition literature read it from the position that a better world – a world that in Torres’s view includes prison and police aboltion – is possible. God damn it, it’s so hard right now to believe that a better world is possible. But I’m trying.</p>
+<p>Anyway, let’s get started.</p>
+<p>I’ll begin on page seven of Gilmore’s introduction, where she points out that California’s prison system expanded rapidly between 1982 and 2000 even though crime in California peaked in 1980<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. Gilmore is clearly asking why California started building more prisons even as its crime rate declined. Yet right here on one of the first pages of Gilmore’s introduction is where I began to realize how difficult it would be to take Torres’s advice.</p>
+<p>My first thought upon reading Gilmore’s description of California’s history above was: Wait, doesn’t that timeline <em>support</em> rather than refute the effectiveness of the carceral state? The proponent of the carceral state would say: Crime rates rose from the 60s into the 80s, and we responded by throwing more and more people into prison. As the result of <em>incapacitating</em> criminals (i.e., removing them from society and locking them in cages where they can’t commit crimes), crime went down. Thinking about this simple counterargument, I thought: Doesn’t opening your book with this timeline (as Davis’s book also did) leave the abolition movement vulnerable to swift rebuttal?</p>
+<p>The argument in favor of criminal incapacitation through incarceration is compelling because it is simple, but also because it matches the timeline. If you think the argument isn’t compelling, you haven’t been paying attention; millions of Americans are convinced by it, even the ones who understand the trajectory of crime rates in the 20th and 21st centuries.</p>
+<p>I’ll illustrate the simplicity of the causal argument in favor of incarceration by drawing a causal diagram. The circles in the diagram represent facts. The arrows point from causes to effects. The fancy scholarly term for this type of diagram is “directed acyclic graph” or “DAG.” You can use the <strong>dagitty</strong> package in R <span class="citation">(<a href="#ref-dagitty2016" role="doc-biblioref">Textor and van der Zander 2016</a>)</span> to draw one of these bad boys.</p>
+<pre class="r"><code>library(dagitty)
+carceral_dag &lt;- dagitty::dagitty(&#39;dag {
+    &quot;Rising crime rate&quot; [pos=&quot;0,1&quot;]
+    &quot;Crackdown on crime&quot; [pos=&quot;0,2&quot;]
+    &quot;Prison expansion&quot; [pos=&quot;0,3&quot;]
+    &quot;Incapacitation of criminals&quot; [pos=&quot;0,4&quot;]
+    &quot;Falling crime rate&quot; [pos=&quot;0,5&quot;]
+    
+    &quot;Rising crime rate&quot; -&gt;
+    &quot;Crackdown on crime&quot; -&gt;
+    &quot;Prison expansion&quot; -&gt;
+    &quot;Incapacitation of criminals&quot; -&gt;
+    &quot;Falling crime rate&quot;
+}&#39;)
+plot(carceral_dag)</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/incapacitation-causal-diagram-1.png" width="672" /></p>
+<p>It’s as simple of an argument as that. I think a fifth grader could figure this DAG out.</p>
+<p>Now if you’ve read this far and concluded that I am myself a proponent of incarceration, you’d be wrong. I am strongly committed to studying prison abolitionist ideas and advocating for them if I become convinced. I am also already convinced that most non-violent crimes – especially crimes related to drug use and sales – shouldn’t lead to prison time. I’m also strongly committed to encouraging my friends and family to educate themselves about abolition, too. I mean, fuck, dude, <em>I bought my own mother a copy of <strong>Are Prisons Obsolete?</strong> from a Black-owned book store.</em> I’m not patting myself on the back. I’m an affluent White dude who was sired by a moneyed descendant of slaveholdrs, and who works for a large corporation; so fuck patting myself on the back. I’m just trying to assuage your fears that you’re reading the diatribe of a thin blue line walking asshat.</p>
+<p>Anyway, as we’ll see, the simplicity of the carceral DAG is part of the problem. We will, with Gilmore’s help, interrogate the merits of that DAG. Moreover, we will invoke Gilmore’s arguments to confront the carceral DAG with convincing causal narratives about the negative impact of incarceration on communities. We will even use causal narratives to entertain the possibility that abolition might be the right choice even if incapacitation is an effective means of lowering the crime rate.</p>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-davis2011prisons" class="csl-entry">
+Davis, Angela Y. 2011. <em>Are Prisons Obsolete?</em> <span>Seven Stories Press</span>.
+</div>
+<div id="ref-gilmore2007golden" class="csl-entry">
+Gilmore, Ruth Wilson. 2007. <em>Golden Gulag: <span>Prisons</span>, Surplus, Crisis, and Opposition in Globalizing <span>California</span></em>. Vol. 21. <span>Univ of California Press</span>.
+</div>
+<div id="ref-dagitty2016" class="csl-entry">
+Textor, Johannes, and Benito van der Zander. 2016. <em>Dagitty: Graphical Analysis of Structural Causal Models</em>. <a href="https://CRAN.R-project.org/package=dagitty">https://CRAN.R-project.org/package=dagitty</a>.
+</div>
+<div id="ref-torresInvitationAbolitionCurious2020" class="csl-entry">
+Torres, Mo. 2020. <span>“An Invitation to Abolition for the Curious Sociologist.”</span> <em>Scatterplot</em>.
+</div>
+<div id="ref-vitale2017end" class="csl-entry">
+Vitale, Alex S. 2017. <em>The End of Policing</em>. <span>Verso Books</span>.
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>More later on the controversy over when the peak happened<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
