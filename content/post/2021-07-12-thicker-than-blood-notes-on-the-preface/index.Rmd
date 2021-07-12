@@ -1,0 +1,30 @@
+---
+title: 'Thicker than Blood: Notes on the preface'
+author: Ben Hanowell
+date: '2021-07-12'
+slug: thicker-than-blood-notes-on-the-preface
+categories: []
+tags:
+  - race as a covariate
+  - ADPRI
+bibliography: [../scholar.bib]
+---
+
+More than a year ago, I [posted](https://slipbox.hanowell.me/post/2020/06/26/reading-list-for-moving-beyond-race-as-a-covariate/) about a Twitter thread where Ali Sewell presented a starter kit for researchers to move beyond the inclusion of categorical variable for "race" in social science research. Well, I finally started reading, Dr. Sewell.
+
+My long-term goal here is, of course, is to become a better research. Yet my immediate goal with these readings has changed somewhat with my employment situation, but not much. Before, I intended to apply these lessons to people analytics research at Amazon. But I left Amazon for a job as Director, Applied Micro economist, at the [ADP Research Institute](https://www.adpri.org/) (ADPRI) head by [Dr. Nela Richardson](https://www.adpri.org/about/?tab=1&subtab=1%3A1719).
+
+At the ADPRI, I'll use ADP's massive payroll, payroll tax, and human capital management (HCM) databases to study the global labor market. The Institute's research includes matters of diversity, equity, and inclusion (DEI) in the workplace. A lot of DEI research within large corporations remains superficial. The analysis often amounts to quantifying how outcomes (such as promotion, retention, job satisfaction, and wages) vary by racial and ethnic characteristics. Although well-meaning, some critical scholars see fundamental flaws in usage of such racial statistics.
+
+For example, take Dr. Tukufu Zuberi, who wrote **Thick than Blood** [-@zuberi2001thicker], the book on Sewell's list I've decided to readr first. From the first page of the preface, Zuberi holds no punches; to him, "arguments that use racial statistics are statistically unsound." Moreover, the founders of statistics developed its methods as part of a eugenics movement. As a result, much statistical research that concerns race and ethnicity, even well-meaning anti-racist research, rests on faulty assumptions and dubious methods that end up justifying racial stratification. Especially problematic is the way that racial statistics are used to draw causal inferences. More on that later in my reading, but I have a feeling I know where this is going, which is to a better place.
+
+Zuberi's outline for the book:
+
+1. History of the idea of race, racial classification, and the connection to 19th and 20th century evolutionary theories.
+1. Discussion of how social scientists reify the notion of racial stratification.
+1. Critical evaluation of inferential racial statistics in "apparently anti-racist" research.
+1. Show how, by using faulty racial statistics and causal assumptions to refute or present racist arguments, scholars legitimate methods that justify racial stratification.
+
+This is going to be *juicy*.
+
+Related: https://slipbox.hanowell.me/post/2020/06/26/reading-list-for-moving-beyond-race-as-a-covariate/
