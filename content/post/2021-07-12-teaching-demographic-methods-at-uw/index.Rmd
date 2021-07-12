@@ -1,0 +1,21 @@
+---
+title: I'm teaching a graduate course in demographic methods at UW!
+author: Ben Hanowell
+date: '2021-07-12'
+slug: teaching-demographic-methods-at-uw
+categories: []
+tags:
+  - SOC 533A
+  - PHG notes
+bibliography: [../scholar.bib]
+---
+
+In Winter Quarter 2022, I'm teaching the graduate-level demographic methods course at University of Washington (UW). No biggie: it's just the pre-requisite for a [statistical demography course](https://csde.washington.edu/news-events/statistical-demography-and-data-science-csss-stat-soc-563/) taught by [one of the researchers who convinced the freakin' United Nations to use Bayesian methods for population projections0(https://sites.stat.washington.edu/raftery/). Not intimidated at all in the slightest, nah. `r emo::ji("eyes")`
+
+Anyway, this was one of my favorite graduate courses when I took it from [Sam Clark](https://sociology.osu.edu/people/clark.2962), who's now at Ohio State University. It was notoriously difficult. I'm proud to say I got a very good grade, even before Clark applied the merciful grading curve. I'm mainly proud because I had to work my ass off to get that grade, and if I'm not mistaken my child was an infant at the time. Much thanks to my child's mother during that challenging period in our family history... for her more than me, I am sure (and kind of ashamed of)!
+
+In teaching this course, I'm going to try and make the content relevant to current events (such as falling fertility in the U.S., or the persistent mortality gap between U.S. White and Black people, or other current events outside the U.S. that my national bias doesn't bring top of mind). Beyond that, I want to show the budding data scientists in the audience how formal demographic methods are applicable outside of traditional population studies, such as in the private sector jobs they'll apply to after they're finished with grad school. More on that topic later.
+
+The main textbook for the course is @preston2000demography, hereafter in the series referred to as PHG. I'm going to review this textbook since, I'll be honest, it's been a while. Since this is where I take meaningful notes, and since I consider notes to prepare for a course I'll teach to real live graduate students meaningful, I'll take notes on the chapters I read here. So stay tuned!
+
+
