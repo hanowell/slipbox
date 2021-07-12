@@ -27,4 +27,11 @@ Zuberi's outline for the book:
 
 This is going to be *juicy*.
 
+As I read Zuberi and the rest of the material in Sewell's starter kit, I'll keep the following questions in mind:
+
+* How do these lessons apply to the study of DEI and the labor market?
+* Does ADP have the data necessary to apply these lessons?
+* If not, could we get it elsewhere, or collect it ourselves?
+* Why should employers move beyond a simple categorical approach to DEI studies?
+
 Related: https://slipbox.hanowell.me/post/2020/06/26/reading-list-for-moving-beyond-race-as-a-covariate/
