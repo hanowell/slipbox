@@ -10,7 +10,7 @@ tags:
 bibliography: [../scholar.bib]
 ---
 
-In Winter Quarter 2022, I'm teaching the graduate-level demographic methods course at University of Washington (UW). No biggie: it's just the pre-requisite for a [statistical demography course](https://csde.washington.edu/news-events/statistical-demography-and-data-science-csss-stat-soc-563/) taught by [one of the researchers who convinced the freakin' United Nations to use Bayesian methods for population projections0(https://sites.stat.washington.edu/raftery/). Not intimidated at all in the slightest, nah. `r emo::ji("eyes")`
+In Winter Quarter 2022, I'm teaching the graduate-level demographic methods course at University of Washington (UW). No biggie: it's just the pre-requisite for a [statistical demography course](https://csde.washington.edu/news-events/statistical-demography-and-data-science-csss-stat-soc-563/) taught by [one of the researchers who convinced the freakin' United Nations to use Bayesian methods for population projections](https://sites.stat.washington.edu/raftery/). Not intimidated at all in the slightest, nah. `r emo::ji("eyes")`
 
 Anyway, this was one of my favorite graduate courses when I took it from [Sam Clark](https://sociology.osu.edu/people/clark.2962), who's now at Ohio State University. It was notoriously difficult. I'm proud to say I got a very good grade, even before Clark applied the merciful grading curve. I'm mainly proud because I had to work my ass off to get that grade, and if I'm not mistaken my child was an infant at the time. Much thanks to my child's mother during that challenging period in our family history... for her more than me, I am sure (and kind of ashamed of)!
 
