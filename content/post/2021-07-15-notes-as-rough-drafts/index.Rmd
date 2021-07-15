@@ -1,0 +1,12 @@
+---
+title: Notes as rough drafts
+author: Ben Hanowell
+date: '2021-07-15'
+slug: notes-as-rough-drafts
+categories: []
+tags:
+  - slipbox
+  - meta
+---
+
+I need to clarify something for (the very small number of) readers of my slipbox: these are notes, not posts. That means these thoughts may not yet be fully formed, and are certainly not thoroughly edited. There will by typos. There will be run-on sentences. If I publish something that is fully baked, I'll make that clear in the post if it's in this slipbox, or I'll publish it in a completely different venue.
