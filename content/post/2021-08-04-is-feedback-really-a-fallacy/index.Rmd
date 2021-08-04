@@ -1,0 +1,33 @@
+---
+title: Is feedback really a fallacy?
+author: Ben Hanowell
+date: '2021-08-04'
+slug: is-feedback-really-a-fallacy
+categories: []
+tags: []
+bibliography: [../scholar.bib]
+---
+
+I recently joined the [ADP Research Institute](https://www.adpri.org/) (ADPRI) as Director, Applied Micro Economist. Eventually, you'll see some of my writing there, and you might even learn about some of my ADP research in other formats... stay tuned.
+
+But this post isn't about my writing; it's about my ADPRI colleague, Marcus Buckhingham, who wrote an article [in -@buckingham_feedback_2019] with Ashley Goodall called _The Feedback Fallacy_, one of the Harvard Business Reviews most cited that year.
+
+Buckingham and Goodall argue that performance feedback in the workplace stems from three fallacious folk theories:
+
+1. The **_theory of the source of truth_** is the idea that you don't know your own weaknesses, which must be told to you by your coworkers.
+1. The **_theory of learning_** is the idea that you are lacking certain critical skills needed for your job; skills your colleagues must teach you through the provision of "feedback."
+1. The **_theory of excellence_** is the idea that great performance is universal, objectively definable, and transmissible to others.
+
+The problem cutting through each of these folk theories, say Buckingham and Goodall, is the self-centered-ness of feedback. According to them, half of feedback about someone else actually reflects the preferences of the critic. I haven't reviewed this research, and I don't know what the quantitative definition of feedback is that allows us to estimate how much of it is attributable to the critic. But intuitively, it makes sense to me.
+
+Because feedback is self-centered, say the authors, the supposed source of truth about a worker's performance (i.e., feedback from their coworkers) turns out to be systematically biased. The source of bias for any particular case of feedback includes the critic's own eccentricities. You might think, "But there are so many different types of reviewers, all with their own pecularities. Surely they must cancel each other out to provide an accurate picture!" But you're on the wrong track because you're forgetting that the review is in the first place supposed to be about the person who is getting reviewed, not the reviewers!
+
+The remedy, say Buckingham and Goodall, is to embrace the self-centered nature of feedback by admitting it is about _the reviewer's_ reaction to the work, not the objective value of the work itself. They go on to suggest alternative ways of couching a review of someone else's work. By speaking about our reactions to the work rather than assuming we're revleaing some objective truth about our coworker's performance, we're not only more honest, but also more likely to positively influence our coworker's behavior.
+
+The remedy goes further by turning the folk theory of learning on its head. Rather than thinking of our coworkers as broken vessels in need of our mending, we point out the things they are doing that are working for us. Reinforcement rather than criticism wins the day.
+
+This is pretty textbook, and yet so many performance reviews still have it wrong (if you believe Buckingham and Goodall). For example, the authors draw on neuroscientific research to argue that our areas of strength should also be our areas of development. That's how I and many of my colleagues treat the "areas for development" section in the 360-degree feedback we give our colleagues each year. Yet in many companies where I've worked, the coaching on writing this feedback is that the areas of development should include areas of deficiency. Not so, say Buckingham and Goodall.
+
+Lastly, there is the theory of excellence, which Buckingham and Goodall refute by pointing out the importance of subjectively-defined soft skills in many modern workplaces. As a people analyst who has been tasked with understanding corporate employee performance, I can tell you firsthand that... uh... it's super-hard to measure. _Excellent_ performance, which is by definition rare, is even harder to measure. So why bother? Instead, say Buckingham and Goodall, devise ways to measure the specific way in which teammates contribute.
+
+But that's also hard to do... maybe harder to do than measuring excellence. Measuring the uniqueness of each individual worker is impossible because the measure would have no point of reference. But measuring all the unique grains of sand in the desert isn't what Buckingham and Goodall are driving at. Instead, they're driving at a multi-dimensional, multi-faceted measure of what each employee brings to the table. Buckingham's [StandOut](https://standout.tmbc.com/) assessment is an example of putting these ideas into practice.
