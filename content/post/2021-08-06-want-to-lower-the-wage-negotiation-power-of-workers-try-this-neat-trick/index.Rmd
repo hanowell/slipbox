@@ -9,6 +9,7 @@ tags:
   - gig economy
   - flexible scheduling
   - unintended consequences
+bibliography: [../scholar.bib]
 ---
 
 Interesting research by Cullen and Pakzad-Hurson [-@cullen2021equilibrium] that suggests pay transparency gives more wage-negotiation power... to employers! How? Because employers communicate high-fidelity information about the wage they are willing to pay, and can thus "credibly refuse to pay high wages to any one worker to avoid costly renegotiations with others under transparency." That is, when you try to negotiate a raise, they can say without bullshitting you, "If I pay you more, I have to pay everybody more, so no."
