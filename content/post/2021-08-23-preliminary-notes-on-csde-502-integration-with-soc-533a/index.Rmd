@@ -1,0 +1,38 @@
+---
+title: Preliminary notes on CSDE 502 integration with SOC 533A
+author: Ben Hanowell
+date: '2021-08-23'
+slug: preliminary-notes-on-csde-502-integration-with-soc-533a
+categories: []
+tags:
+  - SOC 533A
+  - R at CSDE
+---
+
+Notes on [Phil Hurvitz](https://urbdp.be.uw.edu/people/philip-m-hurvitz/)'s CSDE 502 (Population Proseminar) [course notes](http://staff.washington.edu/phurvitz/csde502_winter_2021/):
+
+## Overall
+
+1. I love how it is a `bookdown` book and I think we should do that with [SOC 533A](https://soc.washington.edu/courses/2019/winter/soc/533/a).
+1. Should the 533A course book mix in slides with book content, or have you (Phil and Zack) found that scrolling through book content is just fine (and less work)?
+1. Oh my god so much of my life will be easier if this is a pre-requisite for SOC 533A.
+
+## Course logistics
+
+1. Think this can be a model for 533A.
+1. Any logistics you can think of that should be different here?
+
+### Computing
+
+1. What do I need to do to host a static site and other assets (e.g., code) at staff.washington.edu? Or should I just host it as a GitHub page like Zack did with [CDWG](https://csde-uw.github.io/computational-demography/)?
+1. Benefits and costs to hosting source code at staff.washington.edu vs. CSE GitHub account?
+
+## Data
+
+1. We should have at least some assignments use US Census data so that students can use their `tidycensus` skills.
+1. Part of my goal with this course is to show how these methods can be used outside of traditional demographic problems. For that, I'll have some examples from human resource analytics (aka "people analytics"), for which I'll use open access data from a [GitHub repository](https://github.com/teuschb/hr_data/blob/master/datasets/MFG10YearTerminationData.csv) hosted by Ben Teusch from Facebook. Also looking for open access data on subscription customers.
+
+## Random stuff
+
+1. I'm pretty sure I've met Phil before and he's neighbors with some of my good friends.
+1. Pretty sure me and my kid have gone trick or treating with Phil and kids, and other people. Looks totally familiar!
