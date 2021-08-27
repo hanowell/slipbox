@@ -22,6 +22,12 @@ Here's the plan:
 1. Gonna have all the course code hosted on GitHub, and the course site will be a GitHub page.
 1. Articles and problem solution sets will be hosted on Canvas.
 
+Ideas for traditional pop research data sources:
+
+1. IPUMS
+1. NORC NLSY
+1. Tidycensus interface to US Census data, linked to county shape files so we can do some fun mapping in problem sets
+
 After figuring all that out, we drank some beer and talked about our favorite "space-times." I learned from this meeting that Phil Hurvitz is pretty cool. Zack's not so bad either.
 
 Last decade, there was a big push against meetings. That push continues today, because, yeah, some meetings are totally useless or just not fun. But meetings serve a purpose. This one definitely served its purpose.
