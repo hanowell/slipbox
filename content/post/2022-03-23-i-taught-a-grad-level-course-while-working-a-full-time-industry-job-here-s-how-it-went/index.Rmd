@@ -1,0 +1,108 @@
+---
+title: I taught a grad-level course while working full-time. Here's how it went.
+author: Ben Hanowell
+date: '2022-03-23'
+slug: i-taught-a-grad-level-course-while-working-a-full-time-industry-job-here-s-how-it-went
+categories: []
+tags:
+  - SOC 533A
+  - remote work and flight from academia
+  - teaching while working a full-time job
+---
+
+*This is the first of two posts about my experience as a part-time faculty member during winter quarter of 2022 at University of Washington. This post focuses on my thoughts about how my experience fits into the broader story of the academic labor market. The second post will focus on my performance as a teacher.*
+
+*Much thanks and love to my family, my friends, my boss, and my coworkers for their support and encouragement while I took this second job. Also much thanks to the people who offered it to me.*
+
+## Tell me if you heard this one before: A corporate stooge walks into a grad class Zoom session...
+
+Last quarter, I taught a graduate-level sociology course in demographic methods at the University of Washington^[Specifically, [Research Methods in Demography (SOC/CS&SS/CSDE 533 A)](https://hanowell.github.io/uwsoc533a/)]. Not only was it my first time teaching as a sole instructor. It was my first time teaching a graduate course. Not only was it my first time teaching a graduate course. I taught it while working full-time as a corporate research scientist^[Specifically, at the [ADP Research Institute](https://www.adpri.org/), where I am the Director of People Analytics Research]. I'll tell the story of my experience, which may also be a story about the increasingly ludicrous academic labor market, and its spillover effects into the broader labor market.
+
+On the whole, my experience teaching the course was good. I love the subject. I made a little side income (more on how little later). I added a line to my LinkedIn profile that lends credibility to the public-facing research I'll do with my current employer. The students were thoughtful, talented, and engaged. I'm not half bad at teaching, maybe a natural, inexperienced as I am. I brought a new perspective to the material based on my work outside academia. I'm happy I did it, and thankful for the opportunity^[Specifically, I thank [Zack Almquist](https://depts.washington.edu/zalmquist/) for reaching out to me about taking the position, along with [Sara Curran](https://jsis.washington.edu/people/sara-curran/) and [Katherine Stovel](https://soc.washington.edu/people/katherine-stovel) for approving of my appointment.]. I'll probably do it again someday.
+
+Yet my experience also forced me to confront tough realities about the academic labor market and my privileged place in it as a part-time interloper from the corporate world. The reality of the academic labor market bites me in three places. **First**, it makes me speculate about how I got the job in the first place. **Second**, it makes me wonder how the Hell anyone survives in the adjunct labor market without an additional full-time job. **Third**, teaching a graduate-level course while working full-time at a corporation is rewarding, but also hard on your health, tough on your relationships, and potentially risky to your main source of employment.
+
+## Reality bite #1: Wait... you want to hire me to do what?
+
+Before last quarter, I'd had a successful corporate data science career for seven years (still do). I regularly mentored current and hopeful corporate scientists (still do). But I'd never taught this course before, much less any graduate course, much less any college course whatsoever.
+
+I was lucky enough to have grant funding for most of graduate school, so I'd only been a teaching assistant for two quarters, the most recent time way back in 2013. Because I left academia for industry after graduate school, I never got the chance to teach afterward, either. Since I left grad school with all but my PhD (ABD, as they say)^[One of my role models is [Pat Moran](https://en.wikipedia.org/wiki/P._A._P._Moran), an Australian statistician who (like me) sucked at basic arithmetic and never got his PhD. Yet he was a professor of statistics for three decades and made huge contributions to probability theory and population genetics.], I haven't published in peer-reviewed journals all that much, and I didn't go on to teach courses after grad school. Unlike [the dude I took this same course from](https://sociology.osu.edu/people/clark.2962) back in 2010, I am not an associate professor, and my research didn't inform the methods the United Nation now uses to project the global population.
+
+So why was I offered the job? And what does that have to say about the academic labor market? I see at least two possible explanations: one that reflects well on me and people like me, the other not so much. Both explanations point to potential risks in the academic labor market for people who don't have my privileged position as a corporate interloper. That risk adds to an already volatile, uncertain market for adjunct professors.
+
+The first reason I got the job is that my experience outside of academia gives me a fresh perspective. I'm not just speculating here; the people who offered me the job said as much. Not only am I an academically trained demographer. I've used that training to help companies make or save money. I've stretched my demographic training to study a broad range of topics: the dynamics of driver engagement in a delivery driver gig economy run by Amazon; the competing risks of filling vs. cancelling job openings for one of the largest employers on the planet; measuring variation in real estate agent retention at Redfin; senior housing and care market growth at A Place for Mom. My connection to the non-academic science job market is also a potential career boost for my students, who due to shrunken tenure track job prospects increasingly look to the corporate world to hedge their bets on gainful employment.
+
+The second reason I got the job may be that UW was having trouble finding people to take adjunct positions. A combination of forces are at play here. Since the surge in higher education demand began in the 1990s, universities have become evermore dependent on this [heavily-exploited labor source](https://www.nytimes.com/2020/03/05/upshot/academic-job-crisis-phd.html), creating greater risks if the contingent labor market were to tighten. If the failure-to-return rate of contingent faculty looks anything like the quits rate for the education services sub-sector of the labor economy (see the chart below), contingent labor attrition has risen since 2012. In the tight post post-pandemic labor market that began in 2021, contingent faculty may have more employment options.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, dev = "svg"}
+library(dplyr)
+library(ggplot2)
+library(readxl)
+library(tidyr)
+readxl::read_excel("SeriesReport-20220323204906_755b07.xlsx", skip = 13) %>%
+  tidyr::pivot_longer(
+    cols = Jan:Dec, names_to = 'month_abb', values_to = 'adj_quits_rate'
+  ) %>%
+  dplyr::filter(as.integer(Year) < 2022) %>%
+  dplyr::mutate(month_year = as.Date(
+    paste(Year, match(month_abb, month.abb), "15", sep = "-")
+  )) %>%
+  dplyr::select(month_year, adj_quits_rate) %>%
+  ggplot2::ggplot() +
+  ggplot2::aes(x = month_year, y = adj_quits_rate) +
+  ggplot2::geom_line() +
+  ggplot2::geom_smooth(se = FALSE, span = .1) +
+  ggplot2::labs(
+    title =
+      paste0("Seasonally adjusted monthly quits rate for education services.\n",
+             "The U.S. education services quits rate has risen since 2012."),
+    subtitle =
+      "Black line = raw series; blue line = LOESS smooth using 10% of local points",
+    x = "Month-year",
+    y = "Adjusted\nquits rate",
+    caption = paste("Data source: Bureau of Labor Statistics",
+                    "Job Openings and Labor Turnovery",
+                    "series JTS610000000000000QUR")
+  ) +
+  ggplot2::theme_minimal() +
+  ggplot2::theme(panel.grid = element_blank(),
+                 axis.title.y = element_text(angle = 0))
+```
+
+According to the [Annual Report on the Economic Status of the Profession, 2020-21](https://www.aaup.org/file/AAUP_ARES_2020-21.pdf) from the [American Association of University Professors](https://www.aaup.org/report/annual-report-economic-status-profession-2020-21), "an abundance of anecdotal evidence indicates that part-time faculty members... have endured terrible economic hardship this year.” A 2021 [Fidelity Investments and Chronicle of Higher Education](https://newsroom.fidelity.com/press-releases/news-details/2021/Fidelity-Investments--The-Chronicle-of-Higher-Education-Study-More-Than-Half-of-College-and-University-Faculty-Considering-Leaving-Teaching-Citing-Burnout-Caused-by-Pandemic/default.aspx) survey estimates that 55% of higher education faculty had considered either changing careers or retiring early in the wake of the pandemic. The impact of lackluster contingent faculty recruiting may be exacerbated if there's also an exodus of *tenure-track faculty* from academia into industry.
+
+In a tightening labor market, who better to turn to for part-time instructor candidates than people like me, who are happy to do it for the reputational benefits, are well-qualified to teach the material, bring a fresh non-academic perspective, aren't as jaded by the flagrant exploitation of our "part-time" labor^[It's well-known that although many universities call their adjunct faculty "part-time", they often have workloads as heavy or heavier than their tenure-track counterparts.], already have health insurance through their current employer, and aren't hurting for cash? And that brings me to my next reality bite.
+
+## Reality bite #2: Wait, how do people even do this, man?
+
+Let me put this in simple terms: UW paid me less than a fourth of what I made during the same period in my day job at ADP. I worked at least 20 hours per week on the course, which means my effective UW salary is at best less than half my ADP salary. As a result, assuming I worked at least 60 hours per week (40 at my day job, 20 teaching), my effective hourly wage dropped by more than 25%.
+
+I live in the Seattle metropolitan area, which ain't cheap. I wouldn't be surprised if someone dependent on adjunct faculty positions for their household income would need three adjunct positions just make ends meet.
+
+Meanwhile, I'm making a little extra cash, building a reputation, feeling fulfilled by inspiring young minds, getting paid well at my day job, and enjoying employer-subsidized medical insurance. I loved teaching the course, and I'd do it again, but there is this part of me that feels like a privileged asshole about the whole thing, I'll be honest. I know I'm not an asshole, but I also know I'm privileged. I need to sit with that and think about what I can do for my contingent faculty colleagues who are just as talented as me, but for whatever reason aren't as lucky. I need to do the same for my corporate colleagues, too, especially my immigrant colleagues who are tied to a particular position for their immigration status, and whose employment prospects aren't as flexible.
+
+## Reality bite #3: Working an academic side job is rewarding, but risky
+
+Starting in mid-November when I started planning this course, my physical activity dropped to abysmally low levels. I currently get winded jogging up a single flight of stairs, whereas before this quarter I was doing high-intensity interval training and Olympic weight-lifting four to six days a week. My vitamin D levels are at a personal low.
+
+I also had very little time for my family because I was working at least 60 hours total per week. Because I have 50% custody of my son and he lives with me every other week, I missed out on a quarter of Sundays with him. And this is just adding a single course of 15 graduate students^[Well, one of them was a (very talented) undergrad.]! Granted, if I do it again, I'll be more experienced, thus more efficient. But it's taken its toll.
+
+In addition to weighing on my health and my family relationships, I'm woefully behind at my day job because I (predictably) under-estimated the time I'd invest in teaching. My boss, who has invested a lot of her time and (extensive) clout into supporting the goals of my position, has been gracious and patient. But everything has its limits. I'll catch up, but the risk is palpable. The experience has potentially positive spillover effects for my full-time employer, but the cost-benefit ratio is uncertain. In the end, it's up to me to *make* the benefits of this experience to me and my employer outweigh the costs.
+
+## Advice to people thinking about doing this
+
+If you're in the private sector and thinking about taking a part-time instructor position as a second job, consider that the benefits will mainly be reputational (by demonstrating you can hack it both in the academic and private sector), as well as personal (in terms of fulfillment, if you love to teach). Consider also where you teach. I was lucky enough (through personal relationships) to find out about a position at UW, one of the "public ivies". The reputational benefit will not be as high for lower-tier institutions (but the personal fulfillment benefit might be at least as high).
+
+As an academic side-hustle, teaching was more fulfilling to me than trying to convince my employer to let me try to publish in peer-reviewed journals has been. My current employer is definitely down for that kind of thing, but my past employers have been less enthused. Especially at Amazon, that privilege usually falls to folks working in central science teams collaborating directly with senior academics who contract as Amazon Scholars. The rest of us had too much writing to do for our director and VP skip levels to read.
+
+Lastly, consider the potential costs to your health and well-being, as well as the potential risks to your current source of full-time employment. *Be realistic about the time investment, both with yourself, and your full-time employer.*
+
+## Okay, enough of that
+
+I hope this post wasn't too negative. To counteract the negativity, I'll close by once more thanking my family, the people who offered me this second job, my current employer (especially my awesome boss, who is my role model), and my excellent students.
+
+Related posts:
+
+* https://slipbox.hanowell.me/post/2021/08/27/on-the-usefulness-of-meetings-and-not-just-for-graduate-course-curriculum-planning/
+* https://slipbox.hanowell.me/post/2021/08/23/preliminary-notes-on-csde-502-integration-with-soc-533a/
+* https://slipbox.hanowell.me/post/2021/07/12/teaching-demographic-methods-at-uw/
