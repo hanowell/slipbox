@@ -14,9 +14,9 @@ tags:
 
 **A chapter overview describes what will happen in each part and chapter of the book. This definitely needs editing, because usually you want it to be under 3,000 words, but this is nearly 5,000. Surely, some of the content here will move into the book overview section of the proposal, or just be cut for length.**
 
-**The book aims to make _event history analysis_ (also called duration modeling, or failure analysis, and part of it called survival analysis) a household name among business leaders. Event history analysis is the beautiful, extensible, flexible, and sadly underused science of how often stuff happens.**
+**The book aims to make _event history analysis_ a" "household name" among business leaders. Event history analysis is the beautiful, extensible, flexible, and sadly underused science of how often stuff happens. It's also called duration modeling, or failure analysis, and parts of it are known as survival analysis, competing risk analysis, and multi-state modeling. I want the book to do for event history analysis what [_Prediction Machines_](https://www.amazon.com/Prediction-Machines-Economics-Artificial-Intelligence-ebook/dp/B075GXJPFS/ref=sr_1_1?gclid=Cj0KCQjwjbyYBhCdARIsAArC6LKWoUkpLu2AHAp85zhLzKxAt8Ql3HiJeP9lurKh6am-y-xJ8DfrPPYaApd7EALw_wcB&hvadid=241897436765&hvdev=c&hvlocphy=9033269&hvnetw=g&hvqmt=e&hvrand=13120673947514348773&hvtargid=kwd-446246170447&hydadcr=16378_10302381&keywords=prediction+machines&qid=1662004075&sr=8-1) did for machine learning.**
 
-**It will explain intuitively what event history analysis is, how to do it, mistakes to avoid, and how to use it to guide business strategy, decision-making, and product design.**
+**The book will explain intuitively what event history analysis is, how to do it, mistakes to avoid, and how to use it to guide business strategy, decision-making, and product design.**
 
 **Most of its examples will come from workforce management, which is both my area of expertise and an issue common across businesses.**
 
