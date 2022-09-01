@@ -38,7 +38,7 @@ I explain how the book will help readers avoid those mistakes and missed opportu
 
 I move on to briefly introduce myself, why I wrote the book, and why readers should trust my judgment. I demonstrate my credentials by describing projects where I’ve used event history analysis to help businesses solve tough problems and expose egregious analytical errors.
 
-After introducing the first two characters in the book (event history analysis and me),  I move on to the third and fourth. The third character in the book is a survey that will ask people in business operations and analytics occupations about how their employers use the type of data that event history analysis was made for. The book will reference the survey’s results to measure how often businesses make the mistakes outlined by the book, and how often they avoid those mistakes by using event history analysis instead.
+After introducing the first two characters in the book (event history analysis and me), I move on to the third and fourth. The third character in the book is a survey that will ask people in business operations and analytics occupations about how their employers use the type of data that event history analysis was made for. The book will reference the survey’s results to measure how often businesses make the mistakes outlined by the book, and how often they avoid those mistakes by using event history analysis instead.
 
 The fourth character in the book is the set of data sources I use to demonstrate the decision-making tools and product features made possible by event history analysis. [REDACTED.] I explain that most examples come from workforce management. Not only is this field my area of expertise. Because the robots and algorithms have yet to take over, most businesses still employ people, making workforce management a common issue.
 
@@ -96,7 +96,7 @@ I repurpose a quote attributed to Regis McKenna and envision a future in which e
 
 This chapter provides specific examples of how event history analysis output can help businesses make decisions that align with their strategy. I group these examples into the three categories of data science defined by Miguel Hernán, John Hsu, and Brian Healy: description, prediction, and what-if analysis (otherwise known as counterfactual prediction).
 
-### Chapter 10: [Product guidance: What to build]
+### Chapter 10: Ship early and ship often
 
 This chapter demonstrates products that event history analysis alone makes possible. I provide business-to-customer, business-to-business, and business-internal examples. Each of these demos will be available live online.
 
