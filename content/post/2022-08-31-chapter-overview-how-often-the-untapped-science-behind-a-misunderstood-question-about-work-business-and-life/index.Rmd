@@ -28,7 +28,7 @@ tags:
 
 ## Introduction
 
-I introduce the book’s central claim: A fundamental question about work, business, and life itself is simply, “How often does stuff happen?” I let that question hang in readers’ minds as I embark on a brief but entertaining tangent about the etymology of the word “often” and its synonym “seldom.” This paired etymology, I argue, is a metaphor for both the question, “How often?”, and the misunderstandings that many people have about it.
+I introduce the book’s central claim: A fundamental question about work, business, and life itself is simply, “How often does stuff happen?” I let that question hang in readers’ minds as I embark on a brief but entertaining tangent about the etymology of the word “often” and its antonym “seldom.” This paired etymology, I argue, is a metaphor for both the question, “How often?”, and the misunderstandings that many people have about it.
 
 Returning to my initial claim, I argue that this deceptively basic question lies at the heart of so many others in business. It lies also at the heart of the social sciences, as well as many of the “prediction machines” that our society increasingly uses to automate decision-making. The question is so pervasive, I argue, because it is fundamental to our understanding of reality itself.
 
