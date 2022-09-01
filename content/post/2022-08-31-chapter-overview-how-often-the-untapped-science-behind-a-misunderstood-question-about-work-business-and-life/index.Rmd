@@ -41,9 +41,7 @@ I move on to briefly introduce myself, why I wrote the book, and why readers sho
 After introducing the first two characters in the book (event history analysis and me),  I move on to the third and fourth. The third character in the book is a survey that will ask people in business operations and analytics occupations about how their employers use the type of data that event history analysis was made for. The book will reference the survey’s results to measure how often businesses make the mistakes outlined by the book, and how often they avoid those mistakes by using event history analysis instead.
 
 The fourth character in the book is the set of data sources I use to demonstrate the decision-making tools and product features made possible by event history analysis. [REDACTED.] I explain that most examples come from workforce management. Not only is this field my area of expertise. Because the robots and algorithms have yet to take over, most businesses still employ people, making workforce management a common issue.
-=======
-The fourth character in the book is the set of data sources I use to demonstrate the decision-making tools and product features made possible by event history analysis. First and foremost among these data sources is payroll and human resource records from ADP human capital management systems. I explain that most examples come from workforce management. Not only is this field my area of expertise. Because the robots and algorithms have yet to take over, most businesses still employ people, making workforce management a common issue.
->>>>>>> d42bf453196285c9a0c25063970042a3cbf7c4c8
+
 Finally, I outline the book’s three parts.
 
 ## PART I – How often? The fundamental question
