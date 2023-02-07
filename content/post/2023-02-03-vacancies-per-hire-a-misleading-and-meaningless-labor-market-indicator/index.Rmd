@@ -20,7 +20,7 @@ library(zoo)
 fredr::fredr_set_key(keyring::key_get("fred"))
 ```
 
-*In this post, I express my own views and not those of my employer. It's... spicy. `r emo::jis %>% dplyr::filter(name == "hot pepper", qualified == "fully-qualified") %>% dplyr::pull(emoji)`*
+*In this post, I express my own views and not those of my employer. It's... spicy. `r emo::jis %>% dplyr::filter(name == "hot pepper", qualified == "fully-qualified") %>% dplyr::pull(emoji)` In any case, I might adapt it for work at some point.*
 
 Talking about the hot labor market is so hot right now. Every pundit favors one econometric thermometer or another. One popular gauge: The ratio of job openings to hires. Its proponents call it a proxy for the average time to fill an opening. The longer the time to fill, the harder employers find it to hire, and the hotter the labor market. Simple, right? There's just one hitch.
 
