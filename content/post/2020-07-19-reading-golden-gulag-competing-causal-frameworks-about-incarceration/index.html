@@ -12,7 +12,6 @@ tags:
   - imagining a better world
 ---
 
-<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
 
 
 <p>I’m reading Ruth Wilson Gilmore’s <em>Golden Gulag</em> <span class="citation">(<a href="#ref-gilmore2007golden" role="doc-biblioref">2007</a>)</span> as part of my education in ideas about the abolition of prisons and police. <em>Gulag</em> is a book about California’s prison system, but it expands to cover broadly what abolitionists refer to as the <em><strong>carceral state</strong></em>.</p>
@@ -22,7 +21,7 @@ tags:
 <p>I’ll begin on page seven of Gilmore’s introduction, where she points out that California’s prison system expanded rapidly between 1982 and 2000 even though crime in California peaked in 1980<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. Gilmore is clearly asking why California started building more prisons even as its crime rate declined. Yet right here on one of the first pages of Gilmore’s introduction is where I began to realize how difficult it would be to take Torres’s advice.</p>
 <p>My first thought upon reading Gilmore’s description of California’s history above was: Wait, doesn’t that timeline <em>support</em> rather than refute the effectiveness of the carceral state? The proponent of the carceral state would say: Crime rates rose from the 60s into the 80s, and we responded by throwing more and more people into prison. As the result of <em>incapacitating</em> criminals (i.e., removing them from society and locking them in cages where they can’t commit crimes), crime went down. Thinking about this simple counterargument, I thought: Doesn’t opening your book with this timeline (as Davis’s book also did) leave the abolition movement vulnerable to swift rebuttal?</p>
 <p>The argument in favor of criminal incapacitation through incarceration is compelling because it is simple, but also because it matches the timeline. If you think the argument isn’t compelling, you haven’t been paying attention; millions of Americans are convinced by it, even the ones who understand the trajectory of crime rates in the 20th and 21st centuries.</p>
-<p>I’ll illustrate the simplicity of the causal argument in favor of incarceration by drawing a causal diagram. The circles in the diagram represent facts. The arrows point from causes to effects. The fancy scholarly term for this type of diagram is “directed acyclic graph” or “DAG.” You can use the <strong>dagitty</strong> package in R <span class="citation">(<a href="#ref-dagitty2016" role="doc-biblioref">Textor and van der Zander 2016</a>)</span> to draw one of these bad boys.</p>
+<p>I’ll illustrate the simplicity of the causal argument in favor of incarceration by drawing a causal diagram. The circles in the diagram represent facts. The arrows point from causes to effects. The fancy scholarly term for this type of diagram is “directed acyclic graph” or “DAG”. You can use the <strong>dagitty</strong> package in R <span class="citation">(<a href="#ref-dagitty2016" role="doc-biblioref">Textor and van der Zander 2016</a>)</span> to draw one of these bad boys.</p>
 <pre class="r"><code>library(dagitty)
 carceral_dag &lt;- dagitty::dagitty(&#39;dag {
     &quot;Rising crime rate&quot; [pos=&quot;0,1&quot;]
@@ -59,7 +58,7 @@ Torres, Mo. 2020. <span>“An Invitation to Abolition for the Curious Sociologis
 Vitale, Alex S. 2017. <em>The End of Policing</em>. <span>Verso Books</span>.
 </div>
 </div>
-<div class="footnotes">
+<div class="footnotes footnotes-end-of-document">
 <hr />
 <ol>
 <li id="fn1"><p>More later on the controversy over when the peak happened<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
