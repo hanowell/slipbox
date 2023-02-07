@@ -1,0 +1,144 @@
+---
+title: A point on the Beveridge curve addresses an absurd, unanswerable question
+author: Ben Hanowell
+date: ""
+slug: a-point-on-the-beveridge-curve-addresses-an-absurd-unanswerable-question
+categories: []
+tags:
+  - dependent competing risks are everywhere
+draft: true
+---
+
+**TABLE THIS BECAUSE:**
+
+* Not sure of U in V/U can be interpreted as count of people who were employed at any time during the month, because it in fact is an approximate of that count where each person is waited by their person-period contributiond
+* Not sure if V/U could be absurd in other ways. Is an exposure time divided by an exposure time (i.e., an average count divided by an average count) really the expectation of V/U over the course of the month?
+
+```{r setup, echo=FALSE, message=FALSE, warning=FALSE}
+library(dplyr)
+library(fredr)
+library(ggplot2)
+library(keyring)
+library(lubridate)
+library(seasonal)
+library(zoo)
+fredr::fredr_set_key(keyring::key_get("fred"))
+```
+
+*This post represents my own opinions and not those of my employer.*
+
+Economists often measure the tightness of the labor market by dividing the number of job openings (also called vacancies) by the number of unemployed people (folks actively looking for a job who don't have one). A chart you'll see on any given [#bumpsandsquigglesday](https://twitter.com/hashtag/bumpsandsquigglesday)^[My pejorative for every economic statistics release day, in this case especially [Jobs Day](https://www.bls.gov/schedule/news_release/empsit.htm).] shows the monthly ratio of vacancies to unemployment (often abbreviated as V/U). Higher V/U implies greater chances that unemployed folks get jobs.
+
+The chart looks like this:
+
+```{r vu_series, echo=FALSE, warning=FALSE, message=FALSE}
+openings <- fredr::fredr("JTUJOL") %>%
+  dplyr::select(date, value) %>%
+  dplyr::rename(openings = value)
+unemployment <- fredr::fredr("LNU03000000") %>%
+  dplyr::select(date, value) %>%
+  dplyr::rename(unemployment = value)
+uv <- openings %>%
+  dplyr::left_join(unemployment) %>%
+  dplyr::mutate(uv = openings / unemployment)
+uv_ts <- ts(uv$uv,
+            start = c(2000, 12),
+            end = c(2022, 12),
+            frequency = 12)
+uv_x13 <- seasonal::seas(uv_ts)
+uv_x13_preds <- predict(uv_x13) %>%
+  data.frame(uv_adj = as.matrix(.),
+             date = as.Date(zoo::as.yearmon(time(.)))) %>%
+  dplyr::select(date, uv_adj)
+uv <- uv %>% dplyr::left_join(uv_x13_preds)
+ggplot2::ggplot(uv) +
+  ggplot2::aes(x = date, y = uv_adj) +
+  ggplot2::geom_line() +
+  ggplot2::labs(
+    title = "The ratio of vacancies to unemployment doesn't look absurd... but it is",
+    subtitle = "Calculated by Ben Hanowell as the ratio of monthly job openings to unemployment",
+    x = "Calendar month",
+    y = "V/U",
+    caption = "Source: FRED (https://fred.stlouisfed.org/)\nJob openings from Job Opengings and Labor Turnover Survey\nUnemployment from Bureau of Labor Statistics Employment Situation report\nSeasonally adjusted via X-13-ARIMA-SEATS by Ben Hanowell"
+  ) +
+  ggplot2::theme_minimal() +
+  ggplot2::theme(panel.grid = element_blank(),
+                 axis.title.y = element_text(angle = 0, hjust = 0))
+```
+
+Every point on that chart addresses a question that is not only absurd, it's unanswerable. We'll get to that.
+
+Another chart economists like to show is the Beveridge curve^[Which Beveridge apparently never drew.], which plots vacancies against unemployment and draws a timeline path through each point in the series. It looks like this:
+
+```{r beveridge_curve, echo=FALSE, warning=FALSE, message=FALSE}
+ggplot2::ggplot(uv) +
+  ggplot2::aes(x = unemployment/1000, y = openings/1000, color = date) +
+  ggplot2::geom_point() +
+  ggplot2::geom_path() +
+  ggplot2::scale_x_continuous() +
+  ggplot2::labs(
+    title = "U.S. Beveridge curve from December 2000 to December 2022",
+    x = "Unemployment in millions",
+    y = "Vacancies\nin millions",
+    caption = "Source: FRED (https://fred.stlouisfed.org/)\nJob openings from Job Opengings and Labor Turnover Survey\nUnemployment from Bureau of Labor Statistics Employment Situation report"
+  ) +
+  ggplot2::theme_minimal() +
+  ggplot2::theme(panel.grid = element_blank(),
+                 axis.title.y = element_text(angle = 0, hjust = 0))
+```
+
+For each point on the Beveridge curve, the ratio of its $y$ to its $x$ coordinate addresses the same absurd and unanswerable question as the V/U time series chart. The ratio of $x$ to $y$ is merely absurd.
+
+One of these two charts should never again be shown in polite company. The other should be used with care.
+
+Here's why.
+
+## The ratio of vacancies to unemployment addresses an absurd question
+
+Three LinkedIn researchers used the company's job postings data to create a new measure of labor market tightness. In the [Harvard Business Review](https://hbr.org/2022/11/the-u-s-labor-market-is-less-tight-than-it-appears?ab=hero-subleft-2), they explain their motivation, which is a twofold weakness of V/U:
+
+1. Vacancies -- as measured each month by the Job Openings and Labor Turnover Survey, known as [JOLTS](https://www.bls.gov/jlt/) -- don't capture variation over time in the intensity of employers' hiring effort. Not all employers treat all vacancies the same for all time.
+2. Monthly unemployment isn't a good proxy for labor supply because many people looking for a new job already have one.
+
+The researchers' solution is to divide a measure of job openings that *does* account for variation in recruiting effort by the number of active job applicants, who are by definition applying for a job.
+
+Power to the LinkedIn group; they did great work. Yet their critique of V/U is too generous. So I approach this unsuspecting ratio from a new angle: by framing it as the incorrect answer to an unanswerable question that anyone in their right mind would find ridiculous.
+
+We'll get to why the question can't be answered in a moment. The easier place to start is the question's stupidity, apparent immediately after asking it. So finally, here it is, the question that V/U addresses: What would the average time to fill a vacancy be if all job openings that got filled were filled by unemployed people, and if every unemployed person found a job?
+
+If you were taking a sip of something, I hope it's coming out your nose right now. You could walk into any bar in any city in America, and I don't care how drunk or how sober the people in it are, or what they do for a living. They will all find this question utterly idiotic.
+
+Imagine the responses.
+
+"All jobs get filled by unemployed people, huh? Guess I won't try to find a better job than I got right now, and so I reckon that means my drink's on you, pal!"
+
+"Everyone who's unemployed finds a job? Tell that to my cousin, Hell, tell that to my son! Please!"
+
+"Wait... why is it 
+
+Damn. Now I want to go to this dive bar I know in Thrashers Corner at midnight and ask this question. Please be available to pick me up from the road outside, because I'm about to get either really drunk, or just knocked out. Who am I kidding? I'll probably just get indigestion.
+
+Maybe you're convinced about this question's absurdity, but not convinced that it's the question that V/U addresses. Fine, let's break it down.
+
+**Why does it address a question about a hypothetical time to fill a vacancy?** The numerator of V/U is an approximation of the amount of time 
+
+## V/U addresses an unanswerable question
+
+The question is about time to hire.
+
+Time to hire is an unanswerable question. I already wrote a post on it (link).
+
+Here's a summary.
+
+## U/V doesn't help because it also addresses an absurd question
+
+State the absurd question and explain why it's absurd
+
+## Better options
+
+LinkedIn's job openigs per active applicant. This doesn't ask an absurd question.
+
+And it also refers to a directly observable quantity.
+
+## Why the Beveridge curve may not be absurd even if its slope is
+
