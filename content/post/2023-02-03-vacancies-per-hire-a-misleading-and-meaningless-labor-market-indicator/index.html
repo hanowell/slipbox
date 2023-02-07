@@ -1,0 +1,191 @@
+---
+title: 'Job openings per hire: A misleading and meaningless labor market indicator'
+author: Ben Hanowell
+date: '2023-02-03'
+slug: vacancies-per-hire-a-misleading-and-meaningless-labor-market-indicator
+categories: []
+tags:
+  - dependent competing risks are everywhere
+---
+
+
+
+<p><em>In this post, I express my own views and not those of my employer. It’s… spicy. 🌶️</em></p>
+<p>Talking about the hot labor market is so hot right now. Every pundit favors one econometric thermometer or another. One popular gauge: The ratio of job openings to hires. Its proponents call it a proxy for the average time to fill an opening. The longer the time to fill, the harder employers find it to hire, and the hotter the labor market. Simple, right? There’s just one hitch.</p>
+<center>
+<strong>“Average time to fill” is</br>unknowable and meaningless.</strong>
+</center>
+<p>When pundits use this metric to gauge the labor market’s temperature, they mislead the public by addressing an unanswerable question about labor demand and hiring. What’s worse, an answerable question stares them in the face. Worse still, a lack of data pushes an even better question out of reach.</p>
+<p>It’s time to exorcise this metric from public discourse once and for all. At my side during this exorcism, an old friend, the ghost of <a href="https://en.wikipedia.org/wiki/John_Graunt">John Graunt</a> himself: <a href="https://jeroenvermunt.nl/hqmp2007.pdf"><strong>event history analysis</strong></a>. This under-used analytical framework reveals the emptiness of the time to fill question and offers another in its place: “How often?” Moreover, event history analysis charts a path to data that bring a better question (“What are the chances?”) within our grasp.</p>
+<div id="the-question-that-pundits-think-the-ratio-answers" class="section level2">
+<h2>The question that (pundits think) the ratio answers</h2>
+<p>Among economists, the commonest way to calculate time to fill is from the job openings and hires counts from the the Job Openings and Labor Turnover Survey (<a href="https://www.bls.gov/jlt/">JOLTS</a>).</p>
+<p>First, query the monthly job openings data:</p>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/openings-1.png" width="672" /></p>
+<p>Next you’ve got hires:</p>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/hires-1.png" width="672" /></p>
+<p>JOLTS counts active job openings (that is, job openings that employers were recruiting against) on the last business day of the month. This count approximates the total number of exact months that job openings were open and active<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. Hires are the cumulative count of hires at the end of the month. This is a count of events. Divide the exact amount of time that units of observation (in this case, job openings) were exposed to the possibility of an event occurring (in this case, active job openings could get filled) by the number of times that happens, and you get an estimate of the expected time until the event occurs under prevailing rates. Some pseudo-math to illustrate:</p>
+<p><span class="math display">\[
+\begin{align}
+\textsf{Time to fill}
+&amp; = \frac{\textsf{Months jobs open}}{\textsf{filled jobs}}
+= \frac{\textsf{Months open}}{\textsf{filled}} \\
+&amp; \rightarrow \        \textsf{&quot;Months open per fill&quot;}
+\end{align}
+\]</span></p>
+<p>Do the division and some seasonal adjustment, and the ratio looks like this:</p>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/ttf-1.png" width="672" /></p>
+<p>This picture of time to fill seems reasonable, right? It dipped after the dot com bust and 9/11, then climbed into the late noughties until the housing market crashed. It steadily rose during the long recovery from the Great Recession. Then it fell off a cliff with the COVID-19 shock. Finally, it rocketed upward as the economy awoke with a start and a cold sweat from pandemic shutdowns.</p>
+<p>But that’s the trouble with patterns that seem to make sense. When it turns out they’re meaningless, it’s hard to toss them aside.</p>
+</div>
+<div id="the-problem-is-deeper-than-the-definition-of-job-opening" class="section level2">
+<h2>The problem is deeper than the definition of “job opening”</h2>
+<p>Lately, Federal Reserve Chair Jay Powell emphasizes job opening trends in his thinking about whether the economy needs another Fed interest rate hike to cool demand and decelerate price inflation. Because Powell focuses on job openings, they’re a mainstay of economic discourse on Twitter and LinkedIn, especially during <a href="https://twitter.com/hashtag/bumpsandsquigglesday">#bumpsandsquigglesday</a><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>.</p>
+<p><a href="https://twitter.com/PrestonMui?s=20&amp;t=RRqmkq5i4PE-wXjO44fqPQ">Preston Mui</a> at Employ America <a href="https://www.employamerica.org/researchreports/a-vacant-metric-why-job-openings-are-so-unreliable/">already schooled us</a> about our misguided obsession with job openings. These monthly counts from JOLTS tell us nothing about employers’ recruiting effort. Employers don’t treat all job openings in all months the same. Econometricians even developed a <a href="https://academic.oup.com/qje/article-abstract/128/2/581/1942669?login=false">recruiting effort index</a> to address this problem. Too few use it. <a href="https://fred.stlouisfed.org/series/DHIDFHIRIPV">FRED</a> discontinued its series. A shame.</p>
+<p>But even if every recruiter at every employer treated every job opening the same for all time, the ratio of job openings to hires would remain unknowable and meaningless. The question that ratio addresses would remain unanswerable. The temperature of the labor market would remain a mystery.</p>
+<p>The problem with time to fill isn’t a shallow definition of job openings. The issue lies deep in the guts of our implicit assumptions about the hiring process.</p>
+<p>The meaninglessness of time to fill emerges from our mistaken assumption that the sole fate of job openings…</p>
+<p>… is to get filled.</p>
+</div>
+<div id="worse-things-can-happen-to-a-job-opening-than-getting-filled" class="section level2">
+<h2>Worse things can happen to a job opening than getting filled</h2>
+<p>Anyone who works in recruiting will tell you that not all job openings get filled. In the recruiting world, job openings are called “reqs”, short for <strong>requisition</strong>, which is a word that means “an official request” (in this case, for headcount). Employers cancel reqs all the time, usually when their business isn’t doing well. Reqs get cancelled for other reasons, too. Perhaps the job’s labor pool is too small for the level of competition. Perhaps the employer opened an excess of reqs because they <em>know</em> not all of them will get filled. Perhaps the employer no longer needs people to work that job because they hired machines to do it instead. So the recruiter <em>cancels the req</em>. It <em>never gets filled</em>.</p>
+<p>Alas poor req.</p>
+<p>The only way to see how long it would take a cancelled req to get filled is to travel to an alternate reality where it wasn’t cancelled. Imagine that other universe. To do so, you must specify what about its circumstances made it so the req didn’t get cancelled. Is it just impossible to cancel reqs in this universe, so people just leave them open but fill them at the same rate they do in this universe? Or are macroeconomic conditions different in that universe, so they influence <em>both</em> filling <em>and</em> cancellation? Perhaps the company had a better third quarter in that universe, or the labor pool was bigger, or there was less competition for hires. The answers to these questions determine whether or not you can answer your original one: “How long does it take on average to fill a req?”</p>
+<p>Which of those alternate universes seems closest to ours? Surely not the one where it’s simply impossible to cancel reqs. A universe where the req got filled because circumstances were different seems more plausible. And that’s where the problem starts.</p>
+<p>Think again of that poor cancelled req. You don’t know how long it would have taken to fill. You could guess at its time to fill by combining information about how long it was open, along with information about how long all other reqs were open that month until they were either filled or cancelled, or the month ended. You divide those req-months by the number of times reqs got filled and you think you’ve hit the target: expected time to fill.</p>
+<p>Think again. That req was cancelled. Chances are it’s somehow different from the reqs that got filled that month, and that’s <em>why</em> it was cancelled. It’s also potentially different from the reqs that remain open because <em>those reqs haven’t yet been cancelled</em>.</p>
+<p>By smooshing the req-months of cancelled reqs together with those of filled and still-open reqs, you’re assuming that the fill rate would remain the same if you could somehow add in those counterfactual req-months and filled reqs from those that got cancelled in this universe. In pseudo-math, your assumption looks like this:</p>
+<p><span class="math display">\[
+\begin{align}
+\textsf{Time to fill}
+&amp; = \frac{\textsf{Months jobs open}}{\textsf{Jobs filled}} \\
+&amp; = \frac{
+\textsf{Months jobs open}
++ \begin{align}
+&amp; \textsf{Additional months that cancelled} \\
+&amp; \textsf{openings would have been open}
+\end{align}
+}
+{
+\textsf{Jobs filled}
++ \begin{align}
+&amp; \textsf{Cancelled jobs that} \\
+&amp; \textsf{would have been filled}
+\end{align}
+}
+\end{align}
+\]</span></p>
+<p>This will only be true if:</p>
+<p><span class="math display">\[
+\frac{\textsf{Months jobs open}}{\textsf{Jobs filled}}
+= \frac{
+\begin{align}
+&amp; \textsf{Additional months that cancelled} \\
+&amp; \textsf{openings would have been open}
+\end{align}
+}{
+\begin{align}
+&amp; \textsf{Cancelled jobs that} \\
+&amp; \textsf{would have been filled}
+\end{align}
+}
+\]</span>
+This equality only makes sense in worlds where:</p>
+<ol style="list-style-type: decimal">
+<li>No job openings are ever cancelled, or</li>
+<li>Job openings that got cancelled are exactly like the ones that don’t get cancelled or remain open</li>
+</ol>
+<p>In other words, it only makes sense in alternate universes alien to our own. We probably descended from reptiles in those universes.</p>
+<div class="figure">
+<img src="https://compote.slate.com/images/576e7c46-dc05-4cd9-a44a-860968db4c51.png?crop=2357%2C1571%2Cx21%2Cy67&amp;width=960" style="width:50.0%" alt="" />
+<p class="caption">An image from the frightful universe where reqs never get closed. From <a href="https://slate.com/culture/2021/06/super-mario-bros-movie-restoration-morton-jankel-cut.html">Slate</a>.</p>
+</div>
+</div>
+<div id="dependent-risks-bring-the-pain" class="section level2">
+<h2>Dependent risks bring the pain</h2>
+<p>When two or more terminal events are possible, and one event’s occurrence precludes another, the system has what event history analysts call <strong>competing risks</strong>. When the mechanisms that influence the occurrence of one competing event are somehow coupled with the mechanisms that influence the occurrence of another, they are <strong>dependent competing risks</strong>.</p>
+<p>I just laid out an informal argument (a narrative, really) for why, in the presence of dependent competing risks, it’s impossible to estimate the expected time until any of the competing events occurs. If you want a formal argument, <a href="https://grodri.github.io/survival/CompetingRisks.pdf">look here</a> in section 4.</p>
+<p>To be fair, you’ve got two options to make this problem go away. There’s just one snag. Both options are bad.</p>
+<p><strong>Bad option 1</strong>: Ignore the dependencies among the competing risks. You’re free to envision an alternate dimension where one of those events never happens, or where altering the mechanism that influences one event’s occurrence has no effect on other competing events. Maybe the dependency is weak enough to ignore. Fine. But what if it isn’t? And what if there is no way to empirically verify whether or not it is (there isn’t)? Well, then you’re screwed.</p>
+<p><strong>Bad option 2</strong>: Find and adjust for all factors that generate the dependencies between the two competing risks. By doing so, you’re effectively stratifying the ratio of job openings to hires into groups defined by the attributes relevant to both filling and cancellation. Now you’re comparing cancelled reqs to other reqs that are similar in every respect except they happened to get filled or remain open. By comparing similar reqs, you remove the dependency that makes time to fill unknowable. But good luck finding and properly adjusting for all those risk factors.</p>
+<p>Thankfully, you’re not between a rock and a hard place. As is often the case, the solution to the problem is to <em>re-frame the question</em>.</p>
+</div>
+<div id="instead-of-asking-how-long-will-i-wait-ask-how-often" class="section level2">
+<h2>Instead of asking “How long will I wait?” ask “How often?”</h2>
+<p>The ratio of job openings to hires addresses an unanswerable question: How long is the expected waiting time from the req’s creation to the day someone gets hired?</p>
+<p>Meanwhile, this whole time, an answerable question stared the proponents of this meaningless metric in the face. All you have to do is invert the ratio. Instead of calculating job openings per hire, do hires per job opening:</p>
+<p><span class="math display">\[\frac{\textsf{Hires}}{\textsf{Job openings}}\]</span></p>
+<p>This ratio is special: it’s a <strong>proper rate</strong>. A rate is a ratio that compares two quantities in different units of measurement. This becomes clear once you recall what I said before:</p>
+<p><span class="math display">\[\textsf{Job openings} \approx \textsf{Months jobs open}\]</span></p>
+<p>And so:</p>
+<p><span class="math display">\[
+\frac{\textsf{Hires}}{\textsf{Job openings}}
+\approx \frac{\textsf{Hires}}{\textsf{Months jobs open}}
+\]</span></p>
+<p>The numerator is in units of people hired. The denominator is in units of time (exact months) that jobs were open. This rate is a special kind of rate: an <strong>exposure rate</strong>. An exposure rate measures the amount of times an event occurs per unit of time that the event could have possibly occurred. It answers the question: “How often does the event occur?”</p>
+<p>“How often” is a question that we can answer without taking a trip into an alternate universe. For that reason, it’s answerable even in the presence of dependent competing risks. Why? Because we’re dividing the event count only by the time the event could have possibly occurred <em>in this universe</em>. We’re not asking a hypothetical question about how long it would take for all reqs to get filled, including those that got cancelled.</p>
+<p>The more often hires occur, the easier employers find it to hire people, and the looser the labor market. Let’s take a look at it.</p>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/rate_plot-1.png" width="672" /></p>
+<p>The fill rate series shares all the hallmarks of the time to fill series, but the pattern is inverted (because the metric is inverted). The difference is that every single point on the fill rate curve represents a measurable quantity. That means every comparison between points on the fill rate curve is meaningful. That means the trends in the fill rate are meaningful. Even if the trends in the time to fill curve seem to jive with our expectations, that doesn’t make them meaningful.</p>
+<p>Indeed, there are noticeable differences in the patterns of these two curves once you take their absolute percent difference from some index month.</p>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/abs_index-1.png" width="672" /></p>
+<p>The dot com and housing market bust effects look larger for the fill rate than for time to fill. The recovery from the Great Recession is more rapid for time to fill than the fill rate, and post-pandemic time to fill wins the rocket launching contest against the fill rate. These anomalies can’t be explained away by the two metrics being on widely different scales. Pedants might quibble that the numerical instability of percent change metrics could explain it.</p>
+<p>But like… why bother figuring out why the shape of the two trends is different? Only one of them involves a metric that means anything, so just use that one, and ignore the other one.</p>
+<p>“But time to fill is a more intuitive metric,” you might say. And I answer, “What’s worse: Spending an extra minute to explain how to interpret a metric, or showing someone a trend line based on a metric that is <strong><em>unknowable and meaningless</em></strong>?”</p>
+<p>The choice is crystal clear. Still, the fill rate is only the best contender out of two crummy picks.</p>
+</div>
+<div id="if-only-we-could-ask-what-are-the-chances" class="section level2">
+<h2>If only we could ask, “What are the chances?”</h2>
+<p>The ratio of hires to job openings answers the question, “How often do job openings get filled?” Yet it tells us nothing on its own about the extent to which the filling of job openings competes with the risk of their cancellation. If we knew that, we could answer the question, “What is the chance that a job opening will get filled before it gets cancelled?” And if we also knew the chance that a job got cancelled before it got filled, and how these two probabilities are changing over time, we could learn a lot more about the potential fate of a job opening.</p>
+<p>In a perfect world where we’re all descended from reptiles and it’s impossible to cancel job openings, deriving the chance a job gets filled within a given time frame is easy to derive from the job fill rate:</p>
+<p><span class="math display">\[
+\textsf{Chance of filling within } T \textsf{ months}
+= 1 - \textsf{exp}\left[-\left(\textsf{monthly fill rate}\right) \times T\right]
+\]</span></p>
+<p>It gets slightly more complicated when we have to account for the competing risk of cancellation. But it turns out that the chance of each event occurring in a given time frame is proportional to the ratio of its rate to the sum of all event rates. If the cancellation rate increases but the fill rate falls or stays the same, the chance of cancellation will rise at the expense of filling, and vice versa.</p>
+<p>Depending on what happened with req cancellations, the fate of a job opening might look very different. Consider three scenarios:</p>
+<ol style="list-style-type: decimal">
+<li>The cancellation rate is always half the fill rate.</li>
+<li>The cancellation rate is half the fill rate until the end of the pandemic recession, when it becomes a quarter of the fill rate.</li>
+<li>Just like scenario 2 except the cancellation rate quadruples after the Fed starts hiking interests rates, when the cancellation rate becomes equal to the fill rate.</li>
+</ol>
+<p>Below are three time series of the chance a job gets filled vs. cancelled within three months, one series for each scenario.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>. Under scenario 1, the chances diminish gradually, with a possible post-pandemic bump. Under scenario 2, the chance of filling increases after the pandemic recession ends because employers start cancelling reqs less often. That happens under scenario 3, too, up until the Fed starts hiking interest rates and employers start to cancel reqs as often as they fill them. These scenarios differ starkly from one another in their representation of the risks and opportunities faced by both job candidates and employers. Unfortunately, we have no way to tell which of these scenarios (if any) reflects reality. JOLTS collects no information from employers about req cancellations.</p>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/scenarios-1.png" width="672" /></p>
+</div>
+<div id="applicant-tracking-systems-to-the-rescue-but-its-gonna-be-a-slog" class="section level2">
+<h2>Applicant tracking systems to the rescue, but it’s gonna be a slog</h2>
+<p>Applicant tracking systems are software and service platforms that employers use to create and manage reqs, as well as track candidates through the application process. Human capital management systems are platforms that employers use to manage their workforce once they’re hired. To calculate fill and cancellation rates, we need a representative sample of job requisitions along with the dates they were opened, and dates when they were cancelled or filled if applicable. We also need the dates when people were hired, which req their hire filled. From these event logs we can reconstruct the numerators and denominators of both fill and cancellation rates. From there we get the answer to the question: “What are the chances?”</p>
+<p>This will be tough for the following reasons:</p>
+<ol style="list-style-type: decimal">
+<li>Employers may use multiple systems, and trust me… they often don’t combine these systems into a coherent recruiting database.</li>
+<li>Not all requisitions are the same. Believe it or not, some reqs represent a single hire, whereas others represent tens or hundreds or thousands of hires. I… still don’t really understand the concept of “pooling req.” Gonna be honest: I don’t think anyone else does either.</li>
+</ol>
+<p>In short, the data is a mess. Time to clean it up if we want to gauge the labor market’s temperature.</p>
+<p>Application tracking and human capital management system vendors: Let’s get on this.</p>
+</div>
+<div id="yes-its-a-common-mistake" class="section level2">
+<h2>Yes, it’s a common mistake</h2>
+<p>Don’t believe me that major players use the ratio of openings to hires? The <a href="https://www.conference-board.org/topics/labor-markets-charts#additional-insights-for-whats-ahead">Conference Board</a> updates this chart monthly. Look familiar?</p>
+<div class="figure">
+<img src="https://www.conference-board.org/images/data/JOH_0223.png" style="width:50.0%" alt="" />
+<p class="caption">The Conference Board time series chart showing the ratio of job openings to hires</p>
+</div>
+<p>The Burning Glass Institute <a href="(https://www.linkedin.com/posts/gad-levanon-3b9b933_no-sign-of-labor-markets-becoming-less-tight-activity-7026995532803756033-3Ed2?utm_source=share&amp;utm_medium=member_desktop)">does it, too</a>. And lest you think I’m picking on <a href="https://www.linkedin.com/in/gad-levanon-3b9b933/">Gad Levanon</a> (I admire your work, Gad), none other than the St. Louis Fed (home of the invaluable <a href="https://fred.stlouisfed.org/">FRED</a>) commits this <a href="https://fredblog.stlouisfed.org/2021/09/jolts-in-the-labor-market-its-harder-to-hire/">flagrant foul</a> on the regular. And St. Louis ain’t alone. The Philadelphia Fed <a href="https://www.philadelphiafed.org/-/media/frbp/assets/community-development/reports/what-can-employers-do-to-mitigate-hiring-difficulties.pdf">ranked U.S. metropolitan areas</a> by time to fill, referencing the metric so often in a February 2020 report that they gave it an abbreviation: TTF<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>.</p>
+<p>TTF? More like WTF.</p>
+</div>
+<div id="its-even-worse-than-all-that" class="section level2">
+<h2>It’s even worse than all that</h2>
+<p>Each month, JOLTS asks employers the number of job openings where they’re actively recruiting. So far, we’ve assumed that a job opening is created, and it is active until it gets filled or cancelled. Yet in reality, reqs can bounce back and forth between active and inactive status, which means that inactivity is a reversible state. But wait, there’s more: Reqs can also be repurposed for other roles, which effectively means they are cancelled and that another req is created in its place, only for different headcount.</p>
+<p>It’s a jungle out there. Slowly, we’ll traverse it. This time, I figured it was enough to call to your attention that filling isn’t the only thing that happens to job openings, and therefore time to fill is meaningless.</p>
+<p>But next time I’ll talk about how absurd the ratio of job openings to unemployment is. Spoiler alert: event history analysis makes the reveal easy.</p>
+</div>
+<div class="footnotes footnotes-end-of-document">
+<hr />
+<ol>
+<li id="fn1"><p>A possibly bad approximation for reasons beyond the scope of this post. See my <a href="https://www.linkedin.com/pulse/how-you-measure-attrition-matters-part-i-what-isnt-ben-hanowell/">LinkedIn post</a> and my <a href="https://hanowell.github.io/uwsoc533a/concepts-and-measures.html#estimating-person-periods">introduction to demography course notes</a> to teach yourself why.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>My pejorative hashtag on any economic data release day.<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>These scenarios assume constant fill and cancellation rates.<a href="#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>The same abbreviation used by almost every human capital management and applicant tracking system on the market.<a href="#fnref4" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
