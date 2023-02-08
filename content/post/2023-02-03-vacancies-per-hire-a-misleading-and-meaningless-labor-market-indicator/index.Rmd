@@ -109,7 +109,7 @@ ggplot2::ggplot(ttf) +
     title = "Time to fill (supposedly) estimated from job openings per hire",
     subtitle = "Calculated by Ben Hanowell from unadjusted JOLTS openings and hires",
     x = "Calendar month",
-    y = "Time to fill",
+    y = "Time to fill\nin months",
     caption = "Source: FRED (https://fred.stlouisfed.org/)\nSeasonally adjusted via X-13-ARIMA-SEATS by Ben Hanowell"
   ) +
   ggplot2::theme_minimal() +
@@ -258,7 +258,7 @@ ggplot2::ggplot(rate) +
     title = "The job fill rate tells you how often jobs get filled",
     subtitle = "Calculated by Ben Hanowell as the ratio of unadjusted JOLTS hires to openings.",
     x = "Calendar month",
-    y = "Job fill rate",
+    y = "Jobs filled\nper month open",
     caption = "Source: FRED (https://fred.stlouisfed.org/)\nSeasonally adjusted via X-13-ARIMA-SEATS by Ben Hanowell"
   ) +
   ggplot2::theme_minimal() +
@@ -377,7 +377,7 @@ ggplot2::ggplot(dplyr::filter(scenarios, date >= "2020-02-01")) +
     title = "The chance an opening gets filled depends\non how often reqs get cancelled",
     subtitle = "The higher the fill rate relative to cancellation, the better the chances",
     x = "Calendar month",
-    y = "Projected 6-month\nchance that req gets\nfilled before cancelled",
+    y = "Projected 3-month\nchance that req gets\nfilled before cancelled",
     caption = "Source: Fill rates from JOLTS hiring and job openings from FRED (https://fred.stlouisfed.org/)\nProjected six-month probabilities calculated under three scenarios by Ben Hanowell"
   ) +
   ggplot2::theme_minimal() +
