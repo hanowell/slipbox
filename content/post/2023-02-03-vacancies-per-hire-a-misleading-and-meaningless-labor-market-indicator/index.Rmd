@@ -378,7 +378,7 @@ ggplot2::ggplot(dplyr::filter(scenarios, date >= "2020-02-01")) +
     subtitle = "The higher the fill rate relative to cancellation, the better the chances",
     x = "Calendar month",
     y = "Projected 3-month\nchance that req gets\nfilled before cancelled",
-    caption = "Source: Fill rates from JOLTS hiring and job openings from FRED (https://fred.stlouisfed.org/)\nProjected six-month probabilities calculated under three scenarios by Ben Hanowell"
+    caption = "Source: Fill rates from JOLTS hiring and job openings from FRED (https://fred.stlouisfed.org/)\nProjected 3-month probabilities calculated under three scenarios by Ben Hanowell"
   ) +
   ggplot2::theme_minimal() +
   ggplot2::theme(panel.grid = element_blank(),
